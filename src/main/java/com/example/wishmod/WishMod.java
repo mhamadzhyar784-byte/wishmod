@@ -43,7 +43,7 @@ public class WishMod implements ModInitializer {
 
         if (world.random.nextDouble() < risk) {
             player.getInventory().clear();
-            player.setExperienceLevels(0);
+            player.addExperienceLevels(-player.experienceLevel);
             player.setExperiencePoints(0);
             world.playSound(null, player.getBlockPos(), SoundEvents.ENTITY_WITHER_SPAWN, SoundCategory.PLAYERS, 0.6f, 1.5f);
             world.spawnParticles(ParticleTypes.SMOKE, player.getX(), player.getY() + 1, player.getZ(), 60, 0.5, 1, 0.5, 0.05);
